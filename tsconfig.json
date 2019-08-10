@@ -16,6 +16,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ngx-lib-markdown-editor": [
+        "dist/ngx-lib-markdown-editor"
+      ],
+      "ngx-lib-markdown-editor/*": [
+        "dist/ngx-lib-markdown-editor/*"
+      ]
+    }
   }
 }

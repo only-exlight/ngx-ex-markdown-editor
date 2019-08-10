@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ngx-edg-markdown-editor';
+  public form = new FormGroup({
+    markdown: new FormControl(null)
+  });
+
+  get markdown(): FormControl {
+    return this.form.get('markdown') as FormControl;
+  }
 }

@@ -1,0 +1,11 @@
+<div>
+  <div>
+    <button *ngFor="let o of HEADER_OPTIONS" [title]="o.title" (click)="handleOption(o)">{{o.ico}}</button>
+  </div>
+  <div>
+    <button *ngFor="let o of EMPHASIS_OPTIONS" [title]="o.title">{{o.ico}}</button>
+  </div>
+</div>
+<div>
+  <textarea cols="30" rows="10" [formControl]="control"></textarea>
+</div>
