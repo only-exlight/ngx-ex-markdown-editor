@@ -17,28 +17,28 @@ export const CODE_OPTIONS: IOption[] = [{
     title: 'Fences'
 }, {
     example: 'let a = 5',
-    ico: 'Higlight code',
+    ico: 'fal fa-code',
     template: '``` js\n%\n```',
     title: 'Higlight code'
 }];
 
 export const LINK_OPTION: IOption = {
     example: 'Link',
-    ico: 'Link',
+    ico: 'fal fa-link',
     template: '[%](http://%)',
     title: 'Insert link'
 };
 
 export const IMAGE_OPTION: IOption = {
     example: 'img',
-    ico: 'IMG',
+    ico: 'fal fa-image',
     template: '![%](http://% "%")',
     title: 'Insert image'
 };
 
 export const SEPARATOR_OPTION: IOption = {
     example: '',
-    ico: 'SEPARATOR',
+    ico: 'fal fa-horizontal-rule',
     template: '---',
     title: 'Separate line'
 };

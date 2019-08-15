@@ -1,17 +1,17 @@
 import { IOption } from '../interfaces/option';
 
 export const EMPHASIS_OPTIONS: IOption[] = [{
-    ico: 'B',
+    ico: 'fal fa-bold',
     template: '**%**',
     example: 'Bold',
     title: 'Bold text'
 }, {
-    ico: 'I',
+    ico: 'fal fa-italic',
     template: '*%*',
     example: 'Italic',
     title: 'Italic text'
 }, {
-    ico: 'S',
+    ico: 'fal fa-strikethrough',
     template: '~~%~~',
     example: 'Strikethrough',
     title: 'Strikethrough text'

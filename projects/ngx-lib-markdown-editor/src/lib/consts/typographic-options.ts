@@ -2,22 +2,22 @@ import { IOption } from '../interfaces/option';
 
 export const TYPOGRAPHIC_OPTIONS: IOption[] = [{
     example: '',
-    ico: '©',
+    ico: 'fal fa-copyright',
     template: '(c)',
     title: 'Copiright'
 }, {
     example: '',
-    ico: '®',
+    ico: 'fal fa-registered',
     template: '(r)',
     title: 'Trademark'
 }, {
     example: '',
-    ico: '™',
+    ico: 'fal fa-trademark',
     template: '(tm)',
     title: 'Trademark'
 }, {
     example: '',
-    ico: '§',
+    ico: 'fal fa-paragraph',
     template: '(p)',
     title: 'Paragraph'
 }, {

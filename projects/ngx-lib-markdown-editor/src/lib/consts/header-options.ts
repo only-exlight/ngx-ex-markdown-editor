@@ -4,30 +4,30 @@ export const HEADER_OPTIONS: IOption[] = [{
     template: '\n# %',
     example: 'Header',
     title: 'Header',
-    ico: 'H1'
+    ico: 'fal fa-h1'
 }, {
     template: '\n## %',
     example: 'Header',
     title: 'Header',
-    ico: 'H2'
+    ico: 'fal fa-h2'
 }, {
     template: '\n### %',
     example: 'Header',
     title: 'Header',
-    ico: 'H3'
+    ico: 'fal fa-h3'
 }, {
     template: '\n#### %',
     example: 'Header',
     title: 'Header',
-    ico: 'H4'
+    ico: 'fal fa-h4'
 }, {
     template: '\n##### %',
     example: 'Header',
     title: 'Header',
-    ico: 'H5'
+    ico: 'fal fa-h5'
 }, {
     template: '\n###### %',
     example: 'Header',
     title: 'Header',
-    ico: 'H6'
+    ico: 'fal fa-h6'
 }];
