@@ -1,0 +1,3 @@
+<button *ngFor="let o of options" [title]="o.title" (click)="useOption(o)">
+  <i [ngClass]="o.ico"></i>
+</button>
