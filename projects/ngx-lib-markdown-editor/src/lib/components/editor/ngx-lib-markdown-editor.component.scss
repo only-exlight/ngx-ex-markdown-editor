@@ -1,8 +1,21 @@
+.options {
+  padding-bottom: 1rem;
+  border: 1px solid #eee;
+  border-bottom: none;
+  background: #3b3b3e;
+  border-radius: 5px 5px 0 0;
+  >div {
+    padding: 5px;
+  }
+}
+
 .markdown {
   height: 100%;
   width: 100%;
   overflow-y: auto;
-  border: 1px solid #eee;
+  border-right: 1px solid #eee;
+  border-left: 1px solid #eee;
+  background: #f5f4f7;
 
   .editor {
     display: flex;
@@ -13,9 +26,15 @@
       font-family: 'Courier New', Courier, monospace;
       font-size: 14px;
       padding: 3px;
+      border-right: 1px solid #eee;
+      background: #3b3b3e;
+      color: #eee;
 
       >div {
         font-size: 14px;
+        min-width: 26px;
+        text-align: end;
+
       }
     }
 
@@ -30,7 +49,27 @@
         font-family: 'Courier New', Courier, monospace;
         font-size: 14px;
         border: none;
+        background: transparent;
+        outline: none;
       }
+    }
+  }
+}
+
+
+.status-bar {
+  color: #eee;
+  display: flex;
+  border: 1px solid #eee;
+  border-top: none;
+  background: #3b3b3e;
+  border-radius: 0 0 5px 5px;
+
+  >div {
+    display: flex;
+
+    .bar-element {
+      margin: 0 5px;
     }
   }
 }

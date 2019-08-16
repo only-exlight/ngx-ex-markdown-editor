@@ -23,9 +23,9 @@ export class NgxLibMarkdownEditorComponent implements OnInit {
   public selectionStart: number;
   public selectionEnd: number;
 
-  public strNum: number;
-  public colNum: number;
-  public strings: string[] = [];
+  public strNum = 0;
+  public colNum = 0;
+  public strings: string[] = [''];
 
   @Input() public control: FormControl;
   @ViewChild('mrkdwn', {

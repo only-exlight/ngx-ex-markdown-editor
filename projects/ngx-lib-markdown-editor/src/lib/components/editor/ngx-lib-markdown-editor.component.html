@@ -1,4 +1,4 @@
- <div>
+ <div class="options">
    <div>
      <lib-option-button [options]="HEADER_OPTIONS" (used)="handleOption($event)"></lib-option-button>
      <lib-option-button [options]="EMPHASIS_OPTIONS" (used)="handleOption($event)"></lib-option-button>
@@ -22,6 +22,12 @@
        <textarea #mrkdwn [cols]="strings.length" rows="10" (select)="selectText($event)" (click)="focusArea()"
          (input)="handleInput()" [style.height.px]="area.scrollHeight" [formControl]="control"></textarea>
      </div>
+   </div>
+ </div>
+ <div class="status-bar">
+   <div>
+     <div class="bar-element">cтрока: {{strNum}}</div>
+     <div class="bar-element">колонка: {{colNum}}</div>
    </div>
  </div>
 
