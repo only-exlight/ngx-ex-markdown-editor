@@ -1,16 +1,21 @@
  <div class="options">
    <div>
-     <lib-option-button [options]="HEADER_OPTIONS" (used)="handleOption($event)"></lib-option-button>
-     <lib-option-button [options]="EMPHASIS_OPTIONS" (used)="handleOption($event)"></lib-option-button>
+     <lib-option-button style="border-right: 1px solid #d2d2d2" [options]="HEADER_OPTIONS"
+       (used)="handleOption($event)"></lib-option-button>
+     <lib-option-button style="border-right: 1px solid #d2d2d2" [options]="EMPHASIS_OPTIONS"
+       (used)="handleOption($event)"></lib-option-button>
    </div>
    <div>
-     <lib-option-button [options]="LIST_OPTIONS" (used)="handleOption($event)"></lib-option-button>
-     <lib-option-button [options]="OTHER_OPTIONS" (used)="handleOption($event)"></lib-option-button>
+     <lib-option-button style="border-right: 1px solid #d2d2d2" [options]="LIST_OPTIONS" (used)="handleOption($event)">
+     </lib-option-button>
+     <lib-option-button style="border-right: 1px solid #d2d2d2" [options]="OTHER_OPTIONS" (used)="handleOption($event)">
+     </lib-option-button>
    </div>
    <div>
-     <lib-option-button [options]="TYPOGRAPHIC_OPTIONS" (used)="handleOption($event)"></lib-option-button>
-     <lib-option-button [options]="CODE_OPTIONS" (used)="handleOption($event)"></lib-option-button>
-
+     <lib-option-button style="border-right: 1px solid #d2d2d2" [options]="TYPOGRAPHIC_OPTIONS"
+       (used)="handleOption($event)"></lib-option-button>
+     <lib-option-button style="border-right: 1px solid #d2d2d2" [options]="CODE_OPTIONS" (used)="handleOption($event)">
+     </lib-option-button>
    </div>
  </div>
  <div class="markdown" #area>
@@ -29,10 +34,14 @@
      <div class="bar-element">cтрока: {{strNum}}</div>
      <div class="bar-element">колонка: {{colNum}}</div>
    </div>
+   <div>
+     <div class="bar-element">ngx-ex-markdown-editor 0.0.9</div>
+   </div>
  </div>
 
- <button (click)="test()">test</button>
- <div>
+
+ <div style="margin-top: 3rem">
+    <button (click)="test()">test</button>
    <div>Всего строк: {{strings.length}}</div>
    <div>Строка: {{strNum}}</div>
    <div>Колонка: {{colNum}}</div>
