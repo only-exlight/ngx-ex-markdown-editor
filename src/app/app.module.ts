@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { NgxLibMarkdownEditorModule } from 'projects/ngx-lib-markdown-editor/src/lib/ngx-lib-markdown-editor.module';
+import { MarkdownEditorModule } from 'projects/exdg-markdown-editor/src/lib/exdg-markdown-editor.module';
 import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -10,7 +10,7 @@ import { ReactiveFormsModule } from '@angular/forms';
   ],
   imports: [
     BrowserModule,
-    NgxLibMarkdownEditorModule,
+    MarkdownEditorModule,
     ReactiveFormsModule
   ],
   providers: [],

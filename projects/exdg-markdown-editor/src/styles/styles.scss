@@ -1,12 +1,12 @@
-$color1: #efefef;
-$color2: #4e4a4a;
-$color3: #d2d2d2;
+@import "./variables";
+
 .options {
   width: 100%;
   padding: .5rem 0;
   border: 1px solid $color3;
   background: $color1;
   border-radius: 5px 5px 0 0;
+
   >div {
     padding: 5px;
   }
@@ -44,6 +44,25 @@ $color3: #d2d2d2;
     .area {
       height: 100%;
       width: 100%;
+      cursor: text;
+      position: relative;
+
+      .input-area {
+        // opacity: 0;
+        border: 1px solid;
+        position: absolute;
+        height: 16px;
+        font-size: 14px;
+        width: auto;
+      }
+
+      pre {
+        margin: 0;
+        font-family: 'Courier New',
+          Courier,
+          monospace;
+        font-size: 14px;
+      }
 
       textarea {
         width: 100%;
@@ -77,5 +96,26 @@ $color3: #d2d2d2;
     .bar-element {
       margin: 0 5px;
     }
+  }
+}
+
+
+.fal {
+  font-size: 1.1rem;
+  color: $color2;
+}
+
+button {
+  background: transparent;
+  border: 1px solid transparent;
+  padding: 0.25rem .75rem;
+  border-radius: 2px;
+
+  &:hover {
+    border: 1px solid $color3;
+  }
+
+  &:focus {
+    background: #eee;
   }
 }

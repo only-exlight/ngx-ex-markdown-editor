@@ -1,25 +1,13 @@
 import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
-import { HEADER_OPTIONS } from '../../consts/header-options';
-import { EMPHASIS_OPTIONS } from '../../consts/emphasis-options';
-import { LIST_OPTIONS } from '../../consts/list-options';
-import { TYPOGRAPHIC_OPTIONS } from '../../consts/typographic-options';
-import { CODE_OPTIONS, IMAGE_OPTION, LINK_OPTION, SEPARATOR_OPTION } from '../../consts/other-options';
 import { FormControl } from '@angular/forms';
 import { IOption } from '../../interfaces/option';
 
+const LINE_HEIGHT = 16;
 @Component({
-  selector: 'lib-ngx-lib-markdown-editor',
-  templateUrl: 'ngx-lib-markdown-editor.component.html',
-  styleUrls: ['ngx-lib-markdown-editor.component.scss']
+  selector: 'exdg-markdown-editor',
+  templateUrl: 'ngx-lib-markdown-editor.component.html'
 })
-export class NgxLibMarkdownEditorComponent implements OnInit {
-  public readonly HEADER_OPTIONS = HEADER_OPTIONS;
-  public readonly EMPHASIS_OPTIONS = EMPHASIS_OPTIONS;
-  public readonly LIST_OPTIONS = LIST_OPTIONS;
-  public readonly TYPOGRAPHIC_OPTIONS = TYPOGRAPHIC_OPTIONS;
-  public readonly CODE_OPTIONS = CODE_OPTIONS;
-  public readonly OTHER_OPTIONS = [IMAGE_OPTION, LINK_OPTION, SEPARATOR_OPTION];
-
+export class MarkdownEditorComponent implements OnInit {
   public selectionStart: number;
   public selectionEnd: number;
 
@@ -27,10 +15,18 @@ export class NgxLibMarkdownEditorComponent implements OnInit {
   public colNum = 0;
   public strings: string[] = [''];
 
+  xPosition = 0;
+  yPosition = 0;
+
+  text = '';
+
   @Input() public control: FormControl;
   @ViewChild('mrkdwn', {
     read: false
   }) private mrkdwnArea: ElementRef<HTMLTextAreaElement>;
+  @ViewChild('input', {
+    read: false
+  }) private input: ElementRef<HTMLTextAreaElement>;
 
   constructor() { }
 
@@ -68,8 +64,7 @@ export class NgxLibMarkdownEditorComponent implements OnInit {
   }
 
   handleInput() {
-    const text: string = this.control.value;
-    this.strings = text.split('\n');
+    this.strings = this.text.split('\n');
   }
 
   test() {
@@ -77,4 +72,17 @@ export class NgxLibMarkdownEditorComponent implements OnInit {
     console.warn(this);
   }
 
+  handleEditorClick(e: MouseEvent) {
+    const maxPosition = this.strings.length * LINE_HEIGHT - LINE_HEIGHT;
+    const s = e.offsetY % LINE_HEIGHT;
+    const positionY = e.offsetY - LINE_HEIGHT + s;
+    if (positionY > maxPosition) {
+      this.yPosition = maxPosition;
+      this.xPosition = e.offsetX;
+    } else {
+      this.yPosition = positionY;
+      this.xPosition = e.offsetX;
+    }
+    this.input.nativeElement.focus();
+  }
 }

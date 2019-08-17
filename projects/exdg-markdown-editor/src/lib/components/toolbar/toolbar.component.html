@@ -1,0 +1,21 @@
+ <div class="options">
+   <div>
+     <exdg-option-button style="border-right: 1px solid #d2d2d2" [options]="HEADER_OPTIONS"
+       (used)="handleOption($event)"></exdg-option-button>
+     <exdg-option-button style="border-right: 1px solid #d2d2d2" [options]="EMPHASIS_OPTIONS"
+       (used)="handleOption($event)"></exdg-option-button>
+   </div>
+   <div>
+     <exdg-option-button style="border-right: 1px solid #d2d2d2" [options]="LIST_OPTIONS" (used)="handleOption($event)">
+     </exdg-option-button>
+     <exdg-option-button style="border-right: 1px solid #d2d2d2" [options]="OTHER_OPTIONS"
+       (used)="handleOption($event)">
+     </exdg-option-button>
+   </div>
+   <div>
+     <exdg-option-button style="border-right: 1px solid #d2d2d2" [options]="TYPOGRAPHIC_OPTIONS"
+       (used)="handleOption($event)"></exdg-option-button>
+     <exdg-option-button style="border-right: 1px solid #d2d2d2" [options]="CODE_OPTIONS" (used)="handleOption($event)">
+     </exdg-option-button>
+   </div>
+ </div>
