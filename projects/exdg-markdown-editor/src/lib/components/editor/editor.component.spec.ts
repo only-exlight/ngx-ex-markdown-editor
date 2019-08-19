@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NgxLibMarkdownEditorComponent } from './ngx-lib-markdown-editor.component';
+import { MarkdownEditorComponent } from './editor.component';
 
 describe('NgxLibMarkdownEditorComponent', () => {
-  let component: NgxLibMarkdownEditorComponent;
-  let fixture: ComponentFixture<NgxLibMarkdownEditorComponent>;
+  let component: MarkdownEditorComponent;
+  let fixture: ComponentFixture<MarkdownEditorComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NgxLibMarkdownEditorComponent ]
+      declarations: [MarkdownEditorComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NgxLibMarkdownEditorComponent);
+    fixture = TestBed.createComponent(MarkdownEditorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

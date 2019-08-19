@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MarkdownEditorComponent } from './components/editor/ngx-lib-markdown-editor.component';
+import { MarkdownEditorComponent } from './components/editor/editor.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { OptionButtonsComponent } from './components/option-btns/option-btns.component';

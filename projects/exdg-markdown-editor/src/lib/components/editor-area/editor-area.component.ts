@@ -2,6 +2,8 @@ import { Component, ElementRef, Input, ViewChild, OnInit } from '@angular/core';
 import { EditorService } from '../../services/editor.service';
 import { FormControl } from '@angular/forms';
 import { IOption } from '../../interfaces/option';
+import { takeUntil } from 'rxjs/operators';
+import { Subject } from 'rxjs';
 
 const LINE_HEIGHT = 16;
 
@@ -10,6 +12,7 @@ const LINE_HEIGHT = 16;
     templateUrl: 'editor-area.component.html'
 })
 export class EditorAreaComponent {
+    @Input() public control: FormControl;
     public selectionStart: number;
     public selectionEnd: number;
 
@@ -20,7 +23,8 @@ export class EditorAreaComponent {
 
     public text = '';
 
-    @Input() public control: FormControl;
+    private subscriber = new Subject();
+
     @ViewChild('mrkdwn', {
         read: false
     }) private mrkdwnArea: ElementRef<HTMLTextAreaElement>;
@@ -28,13 +32,16 @@ export class EditorAreaComponent {
         read: false
     }) private input: ElementRef<HTMLTextAreaElement>;
 
-    constructor(private editorSrv: EditorService) { }
+    constructor(private editorSrv: EditorService) {
+        this.editorSrv.$toolbarEvents.pipe(takeUntil(this.subscriber))
+            .subscribe(e => this.handleToolbarEvent(e));
+    }
 
     get haveSelected(): boolean {
         return this.selectionStart !== this.selectionEnd;
     }
 
-    public handleOption(option: IOption): void {
+    public handleToolbarEvent(option: IOption): void {
         const text: string = this.control.value;
         if (this.haveSelected) {
             let selectedText = text.slice(this.selectionStart, this.selectionEnd);
