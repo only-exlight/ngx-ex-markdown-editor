@@ -3,7 +3,7 @@ import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'exdg-markdown-editor',
-  templateUrl: 'ngx-lib-markdown-editor.component.html'
+  templateUrl: 'editor.component.html'
 })
 export class MarkdownEditorComponent {
   @Input() public control: FormControl;
