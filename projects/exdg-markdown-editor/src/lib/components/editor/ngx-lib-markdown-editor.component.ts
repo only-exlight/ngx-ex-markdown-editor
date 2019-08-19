@@ -11,14 +11,12 @@ export class MarkdownEditorComponent implements OnInit {
   public selectionStart: number;
   public selectionEnd: number;
 
-  public strNum = 0;
-  public colNum = 0;
   public strings: string[] = [''];
 
-  xPosition = 0;
-  yPosition = 0;
+  public xPosition = 0;
+  public yPosition = 0;
 
-  text = '';
+  public text = '';
 
   @Input() public control: FormControl;
   @ViewChild('mrkdwn', {
@@ -34,11 +32,11 @@ export class MarkdownEditorComponent implements OnInit {
     return this.selectionStart !== this.selectionEnd;
   }
 
-  ngOnInit() {
+  public ngOnInit(): void {
     console.warn(this.mrkdwnArea.nativeElement.selectionStart);
   }
 
-  handleOption(option: IOption) {
+  public handleOption(option: IOption): void {
     const text: string = this.control.value;
     if (this.haveSelected) {
       let selectedText = text.slice(this.selectionStart, this.selectionEnd);
@@ -52,27 +50,27 @@ export class MarkdownEditorComponent implements OnInit {
     }
   }
 
-  selectText(e: Event) {
+  public selectText(e: Event): void {
     this.selectionStart = this.mrkdwnArea.nativeElement.selectionStart;
     this.selectionEnd = this.mrkdwnArea.nativeElement.selectionEnd;
     console.warn(this.selectionStart, this.selectionEnd);
   }
 
-  focusArea() {
+  public focusArea(): void {
     this.selectionStart = this.mrkdwnArea.nativeElement.selectionStart;
     this.selectionEnd = this.mrkdwnArea.nativeElement.selectionEnd;
   }
 
-  handleInput() {
+  public handleInput(): void {
     this.strings = this.text.split('\n');
   }
 
-  test() {
+  public test(): void {
     console.warn(this.mrkdwnArea.nativeElement);
     console.warn(this);
   }
 
-  handleEditorClick(e: MouseEvent) {
+  public handleEditorClick(e: MouseEvent): void {
     const maxPosition = this.strings.length * LINE_HEIGHT - LINE_HEIGHT;
     const s = e.offsetY % LINE_HEIGHT;
     const positionY = e.offsetY - LINE_HEIGHT + s;

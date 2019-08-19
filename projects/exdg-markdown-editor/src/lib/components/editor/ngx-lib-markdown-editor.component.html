@@ -1,18 +1,5 @@
-<exdg-toolbar></exdg-toolbar>
-<div class="markdown" #area>
-  <div class="editor">
-    <div class="strings">
-      <div *ngFor="let str of strings; let i = index">{{i + 1}}</div>
-    </div>
-    <div class="area" (click)="handleEditorClick($event)">
-      <pre>{{text}}</pre>
-      <textarea #input class="input-area" [(ngModel)]="text" [style.top.px]="yPosition" [style.left.px]="xPosition"
-        cols="30" rows="10" (input)="handleInput()"></textarea>
-      <!--<textarea #mrkdwn [cols]="strings.length" rows="10" (select)="selectText($event)" (click)="focusArea()"
-         (input)="handleInput()" [style.height.px]="area.scrollHeight" [formControl]="control"></textarea>-->
-    </div>
-  </div>
-</div>
+<exdg-toolbar (option)="handleOption($event)"></exdg-toolbar>
+<exdg-editor-area></exdg-editor-area>
 <exdg-status-bar></exdg-status-bar>
 
 

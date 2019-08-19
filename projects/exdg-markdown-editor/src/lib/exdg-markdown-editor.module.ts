@@ -7,13 +7,15 @@ import { OptionButtonsComponent } from './components/option-btns/option-btns.com
 import { EditorService } from './services/editor.service';
 import { StatusBarComponent } from './components/status-bar/status-bar.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
+import { EditorAreaComponent } from './components/editor-area/editor-area.component';
 
 @NgModule({
   declarations: [
     MarkdownEditorComponent,
     OptionButtonsComponent,
     StatusBarComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    EditorAreaComponent
   ],
   imports: [
     CommonModule,
