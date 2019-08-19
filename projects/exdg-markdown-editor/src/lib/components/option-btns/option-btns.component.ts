@@ -9,7 +9,7 @@ export class OptionButtonsComponent {
     @Input() public options: IOption[] = [];
     @Output() public used = new EventEmitter<IOption>();
 
-    public useOption(o: IOption) {
+    public useOption(o: IOption): void {
         this.used.emit(o);
     }
 }

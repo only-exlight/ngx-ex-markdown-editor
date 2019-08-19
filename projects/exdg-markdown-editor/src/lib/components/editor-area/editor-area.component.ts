@@ -9,8 +9,7 @@ const LINE_HEIGHT = 16;
     selector: 'exdg-editor-area',
     templateUrl: 'editor-area.component.html'
 })
-export class EditorAreaComponent implements OnInit {
-
+export class EditorAreaComponent {
     public selectionStart: number;
     public selectionEnd: number;
 
@@ -33,10 +32,6 @@ export class EditorAreaComponent implements OnInit {
 
     get haveSelected(): boolean {
         return this.selectionStart !== this.selectionEnd;
-    }
-
-    public ngOnInit(): void {
-        console.warn(this.mrkdwnArea.nativeElement.selectionStart);
     }
 
     public handleOption(option: IOption): void {
@@ -66,11 +61,6 @@ export class EditorAreaComponent implements OnInit {
 
     public handleInput(): void {
         this.strings = this.text.split('\n');
-    }
-
-    public test(): void {
-        console.warn(this.mrkdwnArea.nativeElement);
-        console.warn(this);
     }
 
     public handleEditorClick(e: MouseEvent): void {
